@@ -19,10 +19,9 @@ function playRound(humanChoice, computerChoice) {
     console.log("Human: " + humanChoice)
     console.log("Computer: " + computerChoice)
 
-    while (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
+    while (humanChoice != "rock" && humanChoice != "paper" && humanChoice != "scissors") {
         humanChoice = prompt("Invalid choice! Please enter rock, paper, or scissors:").toLowerCase()
-        console.log("New Human: " + humanChoice);
-        console.log("Computer: " + computerChoice)
+        console.log("New Human: " + humanChoice)
     }
 
     if (humanChoice == "rock") {
