@@ -19,6 +19,12 @@ function playRound(humanChoice, computerChoice) {
     console.log("Human: " + humanChoice)
     console.log("Computer: " + computerChoice)
 
+    while (humanChoice !== "rock" && humanChoice !== "paper" && humanChoice !== "scissors") {
+        humanChoice = prompt("Invalid choice! Please enter rock, paper, or scissors:").toLowerCase()
+        console.log("New Human: " + humanChoice);
+        console.log("Computer: " + computerChoice)
+    }
+
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
             console.log("Draw!")
@@ -29,7 +35,6 @@ function playRound(humanChoice, computerChoice) {
             console.log("You win! Rock beats Scissors")
             humanScore++
         }
-        currRound++
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
             console.log("You win! Paper beats Rock")
@@ -40,7 +45,6 @@ function playRound(humanChoice, computerChoice) {
             console.log("You los! Scissors beats Paper")
             computerScore++
         }
-        currRound++
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
             console.log("You lose! Rock beats Scissors")
@@ -51,22 +55,29 @@ function playRound(humanChoice, computerChoice) {
         } else {
             console.log("Draw")
         }
-        currRound++
+    }
+
+    currRound++
+}
+
+function playGame() {
+    while (currRound <= totalRound) {
+        const humanSelection = getHumanChoice().toLowerCase()
+        const computerSelection = getComputerChoice()
+        playRound(humanSelection, computerSelection)
+    }
+
+    console.log("Final Scores:")
+    console.log(`Human: ${humanScore}`)
+    console.log(`Computer: ${computerScore}`)
+    
+    if (humanScore == computerScore) {
+        console.log("It is a draw")
+    } else if (humanScore > computerScore) {
+        console.log("You win the game!")
+    } else {
+        console.log("Computer win the game!")
     }
 }
 
-
-
-while (currRound <= totalRound) {
-    const humanSelection = getHumanChoice().toLowerCase()
-    const computerSelection = getComputerChoice()
-    playRound(humanSelection, computerSelection)
-}
-
-if (humanScore == computerScore) {
-    console.log("No body is win")
-} else if (humanScore > computerScore) {
-    console.log("You win the game!")
-} else {
-    console.log("Computer win the game!")
-}
+playGame()
