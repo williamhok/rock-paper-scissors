@@ -5,3 +5,11 @@ function getComputerChoice() {
 }
 
 console.log(getComputerChoice())
+
+function getHumanChoice() {
+    const humChoice = prompt("Rock, Paper, or Scissor?")
+
+    return humChoice
+}
+
+console.log(getHumanChoice())
