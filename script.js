@@ -1,5 +1,7 @@
 let humanScore = 0
 let computerScore = 0
+let currRound = 1
+let totalRound = 5
 
 function getComputerChoice() {
     const comChoices = ["rock", "paper", "scissors"]
@@ -16,34 +18,41 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     console.log("Human: " + humanChoice)
     console.log("Computer: " + computerChoice)
+
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
-            console.log("Draw")
+            console.log("Draw!")
         } else if (computerChoice == "paper") {
-            console.log("Computer win")
+            console.log("You lose! Paper beats Rock")
         } else {
-            console.log("You win")
+            console.log("You win! Rock beats Scissors")
         }
+        currRound++
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
-            console.log("You win")
+            console.log("You win! Paper beats Rock")
         } else if (computerChoice == "paper") {
             console.log("Draw")
         } else {
-            console.log("Computer win")
+            console.log("You los! Scissors beats Paper")
         }
+        currRound++
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
-            console.log("Computer win")
+            console.log("You lose! Rock beats Scissors")
         } else if (computerChoice == "paper") {
-            console.log("You win")
+            console.log("You win! Scissors beats Paper")
         } else {
             console.log("Draw")
         }
+        currRound++
     }
 }
 
-const humanSelection = getHumanChoice().toLowerCase()
-const computerSelection = getComputerChoice()
 
-playRound(humanSelection, computerSelection)
+
+while (currRound <= totalRound) {
+    const humanSelection = getHumanChoice().toLowerCase()
+    const computerSelection = getComputerChoice()
+    playRound(humanSelection, computerSelection)
+}
