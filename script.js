@@ -92,7 +92,7 @@ function playRound(humanChoice) {
     roundNum.textContent = currRound
 
     if (currRound == totalRound) {
-        announceWinner()
+        setTimeout(announceWinner, 3000)
     }
 }
 
