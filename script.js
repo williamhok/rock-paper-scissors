@@ -96,15 +96,20 @@ function playRound(humanChoice) {
     }
 }
 
+const gameResult = document.querySelector("#game-result")
+gameResult.textContent = ""
+
 function announceWinner() {    
     if (humanScore == computerScore) {
-        alert("It is a draw")
+        gameResult.textContent = "It is a draw"
     } else if (humanScore > computerScore) {
-        alert("You win the game!")
+        gameResult.textContent = "You win the game!"
     } else {
-        alert("Computer win the game!")
+        gameResult.textContent = "Computer win the game!"
     }
 
+    document.querySelector(".game").classList.add("hidden")
+    document.querySelector(".announcement").classList.remove("hidden")
     setTimeout(reset, 3000)
 }
 
