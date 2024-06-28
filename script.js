@@ -27,38 +27,44 @@ function getHumanChoice(callback) {
     })
 }
 
+const result = document.querySelector(".result")
+const resultText = document.createElement("h1")
+resultText.textContent = "Choose your selection"
+result.appendChild(resultText)
+
 function playRound(humanChoice) {
     const computerChoice = getComputerChoice()
+    
 
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
-            console.log("Draw!")
+            resultText.textContent = "Draw!"
         } else if (computerChoice == "paper") {
-            console.log("You lose! Paper beats Rock")
+            resultText.textContent = "You lose! Paper beats Rock!"
             computerScore++
         } else {
-            console.log("You win! Rock beats Scissors")
+            resultText.textContent = "You win! Rock beats Scissors!"
             humanScore++
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
-            console.log("You win! Paper beats Rock")
+            resultText.textContent = "You win! Paper beats Rock!"
             humanScore++
         } else if (computerChoice == "paper") {
-            console.log("Draw")
+            resultText.textContent = "Draw!"
         } else {
-            console.log("You los! Scissors beats Paper")
+            resultText.textContent = "You los! Scissors beats Paper!"
             computerScore++
         }
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
-            console.log("You lose! Rock beats Scissors")
+            resultText.textContent = "You lose! Rock beats Scissors!"
             computerScore++
         } else if (computerChoice == "paper") {
-            console.log("You win! Scissors beats Paper")
+            resultText.textContent = "You win! Scissors beats Paper!"
             humanScore++
         } else {
-            console.log("Draw")
+            resultText.textContent = "Draw!"
         }
     }
 
