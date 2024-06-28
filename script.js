@@ -13,17 +13,23 @@ const rock = document.querySelector("#rock")
 const paper = document.querySelector("#paper")
 const scissors = document.querySelector("#scissors")
 
-function getHumanChoice(callback) {
+function getHumanChoice() {
     rock.addEventListener("click", function() {
-        callback("rock")
+        if (currRound < totalRound) {
+            playRound("rock")
+        }
     })
 
     paper.addEventListener("click", function() {
-        callback("paper")
+        if (currRound < totalRound) {
+            playRound("paper")
+        }
     })
 
     scissors.addEventListener("click", function() {
-        callback("scissors")
+        if (currRound < totalRound) {
+            playRound("scissors")
+        }
     })
 }
 
@@ -84,26 +90,26 @@ function playRound(humanChoice) {
 
     currRound++
     roundNum.textContent = currRound
+
+    if (currRound == totalRound) {
+        announceWinner()
+    }
 }
 
-// function playGame() {
-//     while (currRound <= totalRound) {
-//         const humanSelection = getHumanChoice().toLowerCase()
-//         const computerSelection = getComputerChoice()
-//         playRound(humanSelection, computerSelection)
-//     }
+function announceWinner() {    
+    if (humanScore == computerScore) {
+        alert("It is a draw")
+    } else if (humanScore > computerScore) {
+        alert("You win the game!")
+    } else {
+        alert("Computer win the game!")
+    }
 
-//     console.log("Final Scores:")
-//     console.log(`Human: ${humanScore}`)
-//     console.log(`Computer: ${computerScore}`)
-    
-//     if (humanScore == computerScore) {
-//         console.log("It is a draw")
-//     } else if (humanScore > computerScore) {
-//         console.log("You win the game!")
-//     } else {
-//         console.log("Computer win the game!")
-//     }
-// }
+    setTimeout(reset, 3000)
+}
 
-getHumanChoice(playRound)
+function reset() {
+    location.reload()
+}
+
+getHumanChoice()
