@@ -9,6 +9,14 @@ function getComputerChoice() {
     return comChoices[random]
 }
 
+const rock = document.querySelector("#rock")
+const paper = document.querySelector("#paper")
+const scissors = document.querySelector("#scissors")
+
+rock.addEventListener("click", () => {
+    alert("Rock")
+})
+
 function getHumanChoice() {
     const humChoice = prompt("Rock, Paper, or Scissor?")
 
@@ -79,4 +87,4 @@ function playGame() {
     }
 }
 
-playGame()
+// playGame()
