@@ -13,24 +13,22 @@ const rock = document.querySelector("#rock")
 const paper = document.querySelector("#paper")
 const scissors = document.querySelector("#scissors")
 
-rock.addEventListener("click", () => {
-    alert("Rock")
-})
+function getHumanChoice(callback) {
+    rock.addEventListener("click", function() {
+        callback("rock")
+    })
 
-function getHumanChoice() {
-    const humChoice = prompt("Rock, Paper, or Scissor?")
+    paper.addEventListener("click", function() {
+        callback("paper")
+    })
 
-    return humChoice
+    scissors.addEventListener("click", function() {
+        callback("scissors")
+    })
 }
 
-function playRound(humanChoice, computerChoice) {
-    console.log("Human: " + humanChoice)
-    console.log("Computer: " + computerChoice)
-
-    while (humanChoice != "rock" && humanChoice != "paper" && humanChoice != "scissors") {
-        humanChoice = prompt("Invalid choice! Please enter rock, paper, or scissors:").toLowerCase()
-        console.log("New Human: " + humanChoice)
-    }
+function playRound(humanChoice) {
+    const computerChoice = getComputerChoice()
 
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
@@ -67,24 +65,24 @@ function playRound(humanChoice, computerChoice) {
     currRound++
 }
 
-function playGame() {
-    while (currRound <= totalRound) {
-        const humanSelection = getHumanChoice().toLowerCase()
-        const computerSelection = getComputerChoice()
-        playRound(humanSelection, computerSelection)
-    }
+// function playGame() {
+//     while (currRound <= totalRound) {
+//         const humanSelection = getHumanChoice().toLowerCase()
+//         const computerSelection = getComputerChoice()
+//         playRound(humanSelection, computerSelection)
+//     }
 
-    console.log("Final Scores:")
-    console.log(`Human: ${humanScore}`)
-    console.log(`Computer: ${computerScore}`)
+//     console.log("Final Scores:")
+//     console.log(`Human: ${humanScore}`)
+//     console.log(`Computer: ${computerScore}`)
     
-    if (humanScore == computerScore) {
-        console.log("It is a draw")
-    } else if (humanScore > computerScore) {
-        console.log("You win the game!")
-    } else {
-        console.log("Computer win the game!")
-    }
-}
+//     if (humanScore == computerScore) {
+//         console.log("It is a draw")
+//     } else if (humanScore > computerScore) {
+//         console.log("You win the game!")
+//     } else {
+//         console.log("Computer win the game!")
+//     }
+// }
 
-// playGame()
+getHumanChoice(playRound)
