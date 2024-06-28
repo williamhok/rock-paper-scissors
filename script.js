@@ -1,6 +1,6 @@
 let humanScore = 0
 let computerScore = 0
-let currRound = 1
+let currRound = 0
 let totalRound = 5
 
 function getComputerChoice() {
@@ -27,6 +27,14 @@ function getHumanChoice(callback) {
     })
 }
 
+const roundNum = document.querySelector("#round-num")
+const playerNum = document.querySelector("#player-score")
+const computerNum = document.querySelector("#computer-score")
+
+roundNum.textContent = "0"
+playerNum.textContent = "0"
+computerNum.textContent = "0"
+
 const result = document.querySelector(".result")
 const resultText = document.createElement("h1")
 resultText.textContent = "Choose your selection"
@@ -42,33 +50,40 @@ function playRound(humanChoice) {
         } else if (computerChoice == "paper") {
             resultText.textContent = "You lose! Paper beats Rock!"
             computerScore++
+            computerNum.textContent = computerScore
         } else {
             resultText.textContent = "You win! Rock beats Scissors!"
             humanScore++
+            playerNum.textContent = humanScore
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
             resultText.textContent = "You win! Paper beats Rock!"
             humanScore++
+            playerNum.textContent = humanScore
         } else if (computerChoice == "paper") {
             resultText.textContent = "Draw!"
         } else {
             resultText.textContent = "You los! Scissors beats Paper!"
             computerScore++
+            computerNum.textContent = computerScore
         }
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
             resultText.textContent = "You lose! Rock beats Scissors!"
             computerScore++
+            computerNum.textContent = computerScore
         } else if (computerChoice == "paper") {
             resultText.textContent = "You win! Scissors beats Paper!"
             humanScore++
+            playerNum.textContent = humanScore
         } else {
             resultText.textContent = "Draw!"
         }
     }
 
     currRound++
+    roundNum.textContent = currRound
 }
 
 // function playGame() {
