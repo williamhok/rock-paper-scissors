@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .header {
     display: flex;
     justify-content: center;
@@ -11,7 +17,12 @@
 }
 
 .game {
-    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 100px;
 }
 
 .board {
@@ -58,6 +69,7 @@
     justify-content: center;
     align-items: center;
     padding: 100px;
+    flex-grow: 1;
 }
 
 .hidden {
