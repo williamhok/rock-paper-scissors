@@ -9,21 +9,21 @@ function getComputerChoice() {
     let computerChoice = getRandomInt(3)
     if (computerChoice == 0) {
         computerChoice = "rock"
-        console.log("rock")
+        console.log("Computer: rock")
     } else if (computerChoice == 1) {
-        computerChoic = "paper"
-        console.log("paper")
+        computerChoice = "paper"
+        console.log("Computer: paper")
     } else {
         computerChoice = "scissors"
-        console.log("scissors")
+        console.log("Computer: scissors")
     }
 
     return computerChoice
 }
 
 function getHumanChoice() {
-    let humanChoice = window.prompt("Rock Paper Scissors")
-    console.log(humanChoice)
+    let humanChoice = window.prompt("Rock Paper Scissors").toLowerCase()
+    console.log("Human: " + humanChoice)
 
     return humanChoice
 }
@@ -45,7 +45,7 @@ function playround(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice().toLowerCase()
+const humanSelection = getHumanChoice()
 const computerSelection = getComputerChoice()
 
 playround(humanSelection, computerSelection)
