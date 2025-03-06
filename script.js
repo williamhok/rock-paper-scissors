@@ -38,9 +38,21 @@ function playround(humanChoice, computerChoice) {
             console.log("You win! Rock beats Scissors")
         }
     } else if (humanChoice == "paper") {
-        console.log(humanChoice)
+        if (computerChoice == "rock") {
+            console.log("You win! Paper beats Rock")
+        } else if (computerChoice == "paper") {
+            console.log("Draw")
+        } else if (computerChoice == "scissors") {
+            console.log("You lose! Scissors beats Paper")
+        }
     } else if (humanChoice == "scissors") {
-        console.log(humanChoice)
+        if (computerChoice == "rock") {
+            console.log("Draw")
+        } else if (computerChoice == "paper") {
+            console.log("You lose! Paper beats Rock")
+        } else if (computerChoice == "scissors") {
+            console.log("You win! Rock beats Scissors")
+        }
 
     }
 }
