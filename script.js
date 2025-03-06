@@ -13,4 +13,10 @@ function getComputerChoice() {
     }
 }
 
-getComputerChoice()
+function getHumanChoice() {
+    let humanChoice = window.prompt("Rock Paper Scissors")
+    getComputerChoice()
+    console.log(humanChoice)
+}
+
+getHumanChoice()
