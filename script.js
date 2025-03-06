@@ -47,13 +47,12 @@ function playround(humanChoice, computerChoice) {
         }
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
-            console.log("Draw")
+            console.log("You lose! Rock beats Scissors")
         } else if (computerChoice == "paper") {
-            console.log("You lose! Paper beats Rock")
+            console.log("You win! Scissors beats Paper")
         } else if (computerChoice == "scissors") {
-            console.log("You win! Rock beats Scissors")
+            console.log("Draw")
         }
-
     }
 }
 
