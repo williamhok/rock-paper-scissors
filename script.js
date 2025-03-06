@@ -56,7 +56,20 @@ function playround(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
 
-playround(humanSelection, computerSelection)
+
+function playGame() {
+    let numRound = 1
+
+    while (numRound < 6) {
+        console.log("Round: " + numRound)
+
+        const humanSelection = getHumanChoice()
+        const computerSelection = getComputerChoice()   
+
+        playround(humanSelection, computerSelection)
+        numRound++
+    }
+}
+
+playGame()
