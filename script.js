@@ -82,4 +82,16 @@ function playround(humanChoice, computerChoice) {
             document.getElementById("finalResult").textContent = "Draw!"
         }
     }
+
+    if (round == 5) {
+        setTimeout(() => {
+            if (playerScore == compScore) {
+                alert("Nobody win the game")
+            } else if (playerScore > compScore) {
+                alert("You win the game")
+            } else {
+                alert("Computer win the game")
+            }
+        }, 1)
+    }
 }  
