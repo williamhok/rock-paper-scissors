@@ -9,13 +9,10 @@ function getComputerChoice() {
     let computerChoice = getRandomInt(3)
     if (computerChoice == 0) {
         computerChoice = "rock"
-        console.log("Computer: rock")
     } else if (computerChoice == 1) {
         computerChoice = "paper"
-        console.log("Computer: paper")
     } else {
         computerChoice = "scissors"
-        console.log("Computer: scissors")
     }
 
     return computerChoice
@@ -26,26 +23,24 @@ const paper = document.querySelector("#paper")
 const scissors = document.querySelector("#scissors")
 let humanChoice = ""
 
-function getHumanChoice() {
-    rock.addEventListener("click", () => {
-        console.log("Human: rock")
-        humanChoice = "rock"
-    })
-    
-    paper.addEventListener("click", () => {
-        console.log("Human: paper")
-        humanChoice = "paper"
-    })
-    
-    scissors.addEventListener("click", () => {
-        console.log("Human: scissors")
-        humanChoice = "scissors"
-    })
+rock.addEventListener("click", () => {
+    humanChoice = "rock"
+    playround(humanChoice, getComputerChoice())
+})
 
-    return humanChoice
-}
+paper.addEventListener("click", () => {
+    humanChoice = "paper"
+    playround(humanChoice, getComputerChoice())
+})
+
+scissors.addEventListener("click", () => {
+    humanChoice = "scissors"
+    playround(humanChoice, getComputerChoice())
+})
 
 function playround(humanChoice, computerChoice) {
+    console.log("Human: " + humanChoice)
+    console.log("Computer: " + computerChoice)
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
             console.log("Draw")
@@ -71,9 +66,4 @@ function playround(humanChoice, computerChoice) {
             console.log("Draw")
         }
     }
-}
-
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()   
-
-playround(humanSelection, computerSelection)
+}  
