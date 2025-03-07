@@ -1,0 +1,31 @@
+.round-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-display {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player-score, .computer-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-choices {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.result-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
