@@ -38,6 +38,13 @@ scissors.addEventListener("click", () => {
     playround(humanChoice, getComputerChoice())
 })
 
+const round = document.querySelector("#round")
+const playerScore = document.querySelector("#playerScore")
+const compScore = document.querySelector("#compScore")
+const playerChoice = document.querySelector("#playerChoice")
+const compChoice = document.querySelector("#compChoice")
+const finalResult = document.querySelector("#finalResult")
+
 function playround(humanChoice, computerChoice) {
     console.log("Human: " + humanChoice)
     console.log("Computer: " + computerChoice)
