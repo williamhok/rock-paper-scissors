@@ -22,7 +22,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = window.prompt("Rock Paper Scissors").toLowerCase()
+    let humanChoice = "rock"
     console.log("Human: " + humanChoice)
 
     return humanChoice
@@ -56,20 +56,7 @@ function playround(humanChoice, computerChoice) {
     }
 }
 
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChoice()   
 
-
-function playGame() {
-    let numRound = 1
-
-    while (numRound < 6) {
-        console.log("Round: " + numRound)
-
-        const humanSelection = getHumanChoice()
-        const computerSelection = getComputerChoice()   
-
-        playround(humanSelection, computerSelection)
-        numRound++
-    }
-}
-
-playGame()
+playround(humanSelection, computerSelection)
