@@ -38,23 +38,16 @@ scissors.addEventListener("click", () => {
     playround(humanChoice, getComputerChoice())
 })
 
-const round = document.querySelector("#round")
-const playerScore = document.querySelector("#playerScore")
-const compScore = document.querySelector("#compScore")
-const playerChoice = document.querySelector("#playerChoice")
-const compChoice = document.querySelector("#compChoice")
-const finalResult = document.querySelector("#finalResult")
-
 function playround(humanChoice, computerChoice) {
     console.log("Human: " + humanChoice)
     console.log("Computer: " + computerChoice)
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
-            console.log("Draw")
+            document.getElementById("finalResult").textContent = "Draw!"
         } else if (computerChoice == "paper") {
-            console.log("You lose! Paper beats Rock")
+            document.getElementById("finalResult").textContent = "You lose! Paper beats Rock"
         } else if (computerChoice == "scissors") {
-            console.log("You win! Rock beats Scissors")
+            document.getElementById("finalResult").textContent = "You win! Rock beats Scissors"
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
