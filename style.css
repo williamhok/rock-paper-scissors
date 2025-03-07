@@ -26,6 +26,21 @@
 
 .result-display {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices-display {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.player-choice, .computer-choice {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
