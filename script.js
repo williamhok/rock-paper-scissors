@@ -1,6 +1,3 @@
-let humanScore = 0
-let computerScore = 0
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max)
 }
@@ -38,30 +35,49 @@ scissors.addEventListener("click", () => {
     playround(humanChoice, getComputerChoice())
 })
 
+let round = 0
+let playerScore = 0
+let compScore = 0
+
 function playround(humanChoice, computerChoice) {
-    console.log("Human: " + humanChoice)
-    console.log("Computer: " + computerChoice)
+    round++
+    document.getElementById("round").textContent = round
+    document.getElementById("playerChoice").textContent = humanChoice
+    document.getElementById("compChoice").textContent = computerChoice
+
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
             document.getElementById("finalResult").textContent = "Draw!"
         } else if (computerChoice == "paper") {
+            compScore++
             document.getElementById("finalResult").textContent = "You lose! Paper beats Rock"
+            document.getElementById("compScore").textContent = compScore
         } else if (computerChoice == "scissors") {
+            playerScore++
             document.getElementById("finalResult").textContent = "You win! Rock beats Scissors"
+            document.getElementById("playerScore").textContent = playerScore
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
+            playerScore++
             document.getElementById("finalResult").textContent = "You win! Paper beats Rock!"
+            document.getElementById("playerScore").textContent = playerScore
         } else if (computerChoice == "paper") {
             document.getElementById("finalResult").textContent = "Draw!"
         } else if (computerChoice == "scissors") {
+            compScore++
             document.getElementById("finalResult").textContent = "You lose! Scissors beats Paper!"
+            document.getElementById("compScore").textContent = compScore
         }
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
+            compScore++
             document.getElementById("finalResult").textContent = "You lose! Rock beats Scissors!"
+            document.getElementById("compScore").textContent = compScore
         } else if (computerChoice == "paper") {
+            playerScore++
             document.getElementById("finalResult").textContent = "You win! Scissors beats Paper!"
+            document.getElementById("playerScore").textContent = playerScore
         } else if (computerChoice == "scissors") {
             document.getElementById("finalResult").textContent = "Draw!"
         }
