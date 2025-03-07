@@ -21,9 +21,26 @@ function getComputerChoice() {
     return computerChoice
 }
 
+const rock = document.querySelector("#rock")
+const paper = document.querySelector("#paper")
+const scissors = document.querySelector("#scissors")
+let humanChoice = ""
+
 function getHumanChoice() {
-    let humanChoice = "rock"
-    console.log("Human: " + humanChoice)
+    rock.addEventListener("click", () => {
+        console.log("Human: rock")
+        humanChoice = "rock"
+    })
+    
+    paper.addEventListener("click", () => {
+        console.log("Human: paper")
+        humanChoice = "paper"
+    })
+    
+    scissors.addEventListener("click", () => {
+        console.log("Human: scissors")
+        humanChoice = "scissors"
+    })
 
     return humanChoice
 }
