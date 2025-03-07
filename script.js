@@ -51,19 +51,19 @@ function playround(humanChoice, computerChoice) {
         }
     } else if (humanChoice == "paper") {
         if (computerChoice == "rock") {
-            console.log("You win! Paper beats Rock")
+            document.getElementById("finalResult").textContent = "You win! Paper beats Rock!"
         } else if (computerChoice == "paper") {
-            console.log("Draw")
+            document.getElementById("finalResult").textContent = "Draw!"
         } else if (computerChoice == "scissors") {
-            console.log("You lose! Scissors beats Paper")
+            document.getElementById("finalResult").textContent = "You lose! Scissors beats Paper!"
         }
     } else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
-            console.log("You lose! Rock beats Scissors")
+            document.getElementById("finalResult").textContent = "You lose! Rock beats Scissors!"
         } else if (computerChoice == "paper") {
-            console.log("You win! Scissors beats Paper")
+            document.getElementById("finalResult").textContent = "You win! Scissors beats Paper!"
         } else if (computerChoice == "scissors") {
-            console.log("Draw")
+            document.getElementById("finalResult").textContent = "Draw!"
         }
     }
 }  
